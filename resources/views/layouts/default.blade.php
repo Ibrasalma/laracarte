@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Laracarte</title>
+	<title>{{ page_title($title ?? '') }}</title>
 
 	<!-- For the mobile device so that the application can be responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
