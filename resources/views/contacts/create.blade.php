@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
 				<h2><strong>Contact</strong></h2>
-				<p class="text-muted">If you're having trouble with it, please <a href="mailto:ibrahimasalamatabah18@hotmail.com">ask for help</a>. 
+				<p class="text-muted">If you're having trouble with it, please <a href="mailto:{{ config('laracarte.admin_support_email') }}">ask for help</a>. 
 				</p>
 				<form method="POST" action="{{ route('contact.store') }}">
 					{{ csrf_field() }}
@@ -25,7 +25,7 @@
 					    {!! $errors->first('message','<span class="help-block">:message</span>') !!}
 					</div>
 					<div class="form-group">
-					    <input type="submit" value="Send your query" class="btn btn-primary btn-block">
+					    <input type="submit" value="Send your query" class="btn btn-primary btn-block" formnovalidate>
 					</div>
 				</form>
 			</div>

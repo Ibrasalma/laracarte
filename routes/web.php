@@ -14,9 +14,9 @@ use App\Mail\ContactMessageCreated;
 
 Route::name('root_path')->get('/', 'PagesController@home');
 
-Route::get('/test-email', function(){
+/*Route::get('/test-email', function(){
 	return new ContactMessageCreated('Bah Ibrahima','ibrahimasalamatabah18@hotmail.com','Merci pour votre plateforme elle nous aide beaucoup vraiment');
-});
+});*/
 
 Route::get('/about', [
 	'as'=>'about_path',

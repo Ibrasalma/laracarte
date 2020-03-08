@@ -25,13 +25,21 @@
 <body>
 	@include('layouts.partials._nav')
 
+	@if (session()->has('notification.message'))
+		<div class="alert alert-<?php echo session()->get('notification.type');?>">
+			{{ session('notification.message') }}	
+		</div>
+	@endif
+
     @yield('content')
 
     @include('layouts.partials._footer')
+    
 
     <script src="//code.jquery.com/jquery.min.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	@include('flashy::message')
 </body>
 </html>
