@@ -16,5 +16,13 @@ class PagesController extends Controller
     	return view('pages.about');
     }
 
+    public function forum()
+    {
+    	return view('forums.forum_index');
+    }
 
+    public function login()
+    {
+        return view('users.user_index');
+    }
 }

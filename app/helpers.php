@@ -5,16 +5,7 @@ if(!function_exists('page_title')){
 
 		$baseTitle = config('app.name') .'- list of artisans';
 
-		if (!isset($title)){
-			
-			return $baseTitle;
-
-		}else{
-
-			return $title.' | '.$baseTitle;
-
-		}
-		
+		return empty($title) ? $baseTitle : sprintf('%s | %s',$title,$baseTitle);
 	}
 }
 
@@ -25,4 +16,5 @@ if(!function_exists('set_active_route')){
 		
 	}
 }
+
 ?>

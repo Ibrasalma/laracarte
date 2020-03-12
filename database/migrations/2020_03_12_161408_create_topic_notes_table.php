@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateTopicNotesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,21 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('fullname');
-            $table->string('email')->unique();
-            $table->string('login')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->integer('id_droit')
+        Schema::create('topic_notes', function (Blueprint $table) {
+            $table->increments('id');
+            $table->enum('note', [0, 1,2,3,4,5]);
+            $table->integer('id_topic')
                     ->foreign()
                     ->references('id')
-                    ->on('droits')
+                    ->on('topics')
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
-            $table->rememberToken();
+            $table->integer('id_user_noteur')
+                    ->foreign()
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -38,6 +39,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('topic_notes');
     }
 }

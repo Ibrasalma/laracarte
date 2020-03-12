@@ -28,6 +28,16 @@
 					    <input type="submit" value="Send your query" class="btn btn-primary btn-block" formnovalidate>
 					</div>
 				</form>
+				<hr>
+				<div class="text-center">
+					<h3>Our Social Sites</h3>
+	                <ul class="list-inline banner-social-buttons">
+	                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name">Facebook</span></i></a></li>
+	                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-wordpress"> <span class="network-name">Wordpress</span></i></a></li>
+	                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-youtube-play"> <span class="network-name">Youtube</span></i></a></li>
+	                </ul>
+				</div>
+
 			</div>
 		</div>
 	</div>

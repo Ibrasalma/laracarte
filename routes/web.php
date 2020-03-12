@@ -23,6 +23,16 @@ Route::get('/about', [
 	'uses'=>'PagesController@about'
 ]);
 
+Route::get('/forum', [
+	'as'=>'forum_path',
+	'uses'=>'PagesController@forum'
+]);
+
+Route::get('/login', [
+	'as'=>'login_path',
+	'uses'=>'PagesController@login'
+]);
+
 Route::get('/contact', [
 	'as'=>'contact.create',
 	'uses'=>'ContactsController@create'
