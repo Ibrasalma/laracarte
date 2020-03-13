@@ -15,12 +15,12 @@ class HelpersTest extends TestCase
      */
     public function test_page_title_should_return_the_correct_title_if_provided()
     {
-        $this->assertEquals('About | Laracarte- list of artisans',page_title('About'));
-        $this->assertEquals('Home | Laracarte- list of artisans',page_title('Home'));
+        $this->assertEquals('About | IbraForum- list of artisans',page_title('About'));
+        $this->assertEquals('Home | IbraForum- list of artisans',page_title('Home'));
     }
     public function test_page_title_should_return_the_base_title_if_empty()
     {
-        $this->assertEquals('Laracarte- list of artisans',page_title(''));
+        $this->assertEquals('IbraForum- list of artisans',page_title(''));
     }
     public function test_menu_item_should_return_active_if_clicked_on()
     {

@@ -1,4 +1,4 @@
-@extends('layouts.default',['title'=>'Home'])
+@extends('layouts.default',['title'=>'Home','logged_logo'])
 <link rel="stylesheet" href="{{ asset('/css/nav.css') }}">
 @section('content')
 	<div class="container">
@@ -7,3 +7,4 @@
 		</div>
 	</div>
 @stop
+<script src="{{ asset('/js.section.js') }}"></script>

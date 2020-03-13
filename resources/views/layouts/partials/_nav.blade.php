@@ -1,6 +1,6 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="{{ asset('/css/navbar.css') }}">
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="background: #033649;color: white">
+<nav class="navbar navbar-default fixed-top navbar-static-top" role="navigation" style="background: #033649;color: white">
   <div id="banner" class="text-center">
     <strong style="color: white">
       Vous voulez un site web pour votre business? <i class="fa fa-phone"></i> applez-nous au +8615868486490 ou envoyez nous un email sur <i class="fa fa-email"></i> <a href="mailto:ibrahimasalamatabah18@hotmail.com" style="color: white">ibrahimasalamatabah18@hotmail.com</a>
@@ -134,9 +134,16 @@
           </div> 
         </li> 
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{ route('login_path') }}" class="glyphicon glyphicon-log-in"> Login</a></li>
-      </ul>
+      @if (Route::has('login_path'))
+        <ul class="nav navbar-nav navbar-right">        
+        @auth
+          <li><a href="{{ url('root_path') }}">Home</a></li>
+          <li><a href="#"><img src="{{ $logged_logo }}"><span>Soccer</span></a></li>
+        @else
+          <li><a href="{{ route('login_path') }}" class="glyphicon glyphicon-log-in"> Login</a></li>
+        @endauth
+      @endif
+        </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

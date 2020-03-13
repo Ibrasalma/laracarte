@@ -8,7 +8,7 @@
 				<p class="text-muted">If you're having trouble with it, please <a href="mailto:{{ config('laracarte.admin_support_email') }}">ask for help</a>. 
 				</p>
 				<form method="POST" action="{{ route('contact.store') }}">
-					{{ csrf_field() }}
+					@csrf
 					<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
 					    <label for="name" class="control-label">Name</label>
 					    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name here" required="required" value="{{ old('name') }}" >

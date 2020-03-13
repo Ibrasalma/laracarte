@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','login','fullname','id_droit'
     ];
 
     /**
@@ -57,41 +57,4 @@ class User extends Authenticatable
         return $this->role->slug != 'user';
     }
 
-    /**
-     * One to Many relation
-     *
-     * @return Illuminate\Database\Eloquent\Relations\hasMany
-     */
-    public function topics() 
-    {
-        return $this->hasMany('App\Models\Topic');
-    }
-    public function droits() 
-    {
-        return $this->hasMany('App\Models\Droit');
-    }
-    public function topic_notes() 
-    {
-        return $this->hasMany('App\Models\TopicNote');
-    }
-    public function tags() 
-    {
-        return $this->hasMany('App\Models\Tag');
-    }
-    public function categories() 
-    {
-        return $this->hasMany('App\Models\categorie');
-    }
-    public function commentaire_notes() 
-    {
-        return $this->hasMany('App\Models\CommentaireNote');
-    }
-    public function commentaires() 
-    {
-        return $this->hasMany('App\Models\Commentaire');
-    }
-    public function droits() 
-    {
-        return $this->belongsTo('App\Models\Droit');
-    }
 }

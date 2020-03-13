@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app()->getLocale() }}">
 <head>
 	<title>{{ page_title($title ?? '') }}</title>
 
@@ -15,6 +15,7 @@
 	<!-- FontAwesome -->
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+	<link rel="stylesheet" href="{{ asset('/css/footer.css') }}">
 
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>

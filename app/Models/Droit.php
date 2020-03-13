@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Droit extends Model
 {
-    public function users() 
-    {
-        return $this->hasMany('App\Models\User');
-    }
+	protected $fillable=['signification'];
+    
 }

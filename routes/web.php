@@ -12,33 +12,17 @@ use App\Mail\ContactMessageCreated;
 |
 */
 
-Route::name('root_path')->get('/', 'PagesController@home');
+Route::view('/', 'pages.home')->name('root_path');
+Route::view('/about', 'pages.about')->name('about_path');
+Route::view('/about', 'pages.about')->name('about_path');
+Route::view('/forum', 'forums.forum_index')->name('forum_path');
+Route::view('/login', 'users.user_index',['img'=>'images/logo.png'])->name('login_path');
+Route::get('/contact', 'ContactsController@create')->name('contact.create');
+Route::post('/contact','ContactsController@store')->name('contact.store');
+Route::post('/login', 'Auth\LoginController@login')->name('user.login');
+Route::post('/register', 'Auth\RegisterController@create')->name('user.register');
 
 /*Route::get('/test-email', function(){
 	return new ContactMessageCreated('Bah Ibrahima','ibrahimasalamatabah18@hotmail.com','Merci pour votre plateforme elle nous aide beaucoup vraiment');
 });*/
 
-Route::get('/about', [
-	'as'=>'about_path',
-	'uses'=>'PagesController@about'
-]);
-
-Route::get('/forum', [
-	'as'=>'forum_path',
-	'uses'=>'PagesController@forum'
-]);
-
-Route::get('/login', [
-	'as'=>'login_path',
-	'uses'=>'PagesController@login'
-]);
-
-Route::get('/contact', [
-	'as'=>'contact.create',
-	'uses'=>'ContactsController@create'
-]);
-
-Route::post('/contact', [
-	'as'=>'contact.store',
-	'uses'=>'ContactsController@store'
-]);

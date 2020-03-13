@@ -13,14 +13,14 @@ class Clean extends Command
      *
      * @var string
      */
-    protected $signature = 'laracarte';
+    protected $signature = 'demo:command';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Cleand database after one month';
+    protected $description = 'Showing the user';
 
     /**
      * Create a new command instance.
@@ -39,6 +39,15 @@ class Clean extends Command
      */
     public function handle()
     {
-        $this->info('cleaning database...');
+        $bar = $this->output->createProgressBar(10);
+
+        $bar->start();
+
+        for ($i = 1; $i <=10 ; $i++) {
+            sleep(1);
+            $bar->advance();
+        }
+
+        $bar->finish();
     }
 }

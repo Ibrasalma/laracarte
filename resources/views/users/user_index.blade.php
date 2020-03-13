@@ -7,6 +7,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
+                <legend class="text-center">
+                    <img src="{{ asset($img) }}" alt="" style="width: auto;"> 
+                </legend>
+                    
                 <div class="panel panel-login">
                     <div class="panel-heading">
                         <div class="row">
@@ -22,7 +26,8 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12">
-                                <form id="login-form" action="#" method="post" role="form" style="display: block;">
+                                <form id="login-form" action="{{-- route('user.login') --}}" method="post" role="form" style="display: block;">
+                                    @csrf
                                     <div class="form-group">
                                         <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
                                     </div>
@@ -50,7 +55,8 @@
                                         </div>
                                     </div>
                                 </form>
-                                <form id="register-form" action="#" method="post" role="form" style="display: none;">
+                                <form id="register-form" action="{{-- asset('user.register') --}}" method="post" role="form" style="display: none;">
+                                    @csrf
                                     <div class="form-group">
                                         <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
                                     </div>

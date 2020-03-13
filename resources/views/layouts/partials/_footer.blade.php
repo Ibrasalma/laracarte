@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ asset('/css/footer.css') }}">
+
 <footer id="footer" class="clearfix">
 	<div id="footer-widgets">
 		<div class="container">
@@ -32,7 +32,7 @@
 					</div> <!-- end widget1 -->
 		    		<div class="col-sm-6 col-md-4">
 				        <div class="kilimanjaro_part">
-                            <h4 class="widgettitle">Tags Widget</h4>
+                            <h4 class="widgettitle">Tags Widget :</h4>
                             <ul class=" kilimanjaro_widget">
                                 <li><a href="#">Classy</a></li>
                                 <li><a href="#">Blog</a></li>
@@ -47,8 +47,9 @@
 			    	</div> <!-- end widget1 -->
 		            <div class="col-sm-6 col-md-4">
 			            <div id="search-3" class="widget widgetFooter widget_search">
-			            	<h4 class="widgettitle">Search in Faploo :</h4>
+			            	<h4 class="widgettitle">Search in Forum :</h4>
       						<form action="#" method="POST">
+      							@csrf
       							<div class="form-group">
 			                    	<label class="control-label">Write what you want to search for it  :</label>
 			                    	<div class="input-group">
