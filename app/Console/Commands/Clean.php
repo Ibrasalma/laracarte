@@ -6,14 +6,14 @@ use Illuminate\Console\Command;
 use App\Models\Message;
 
 
-class CleanDatabase extends Command
+class Clean extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'laracarte:clean-database';
+    protected $signature = 'laracarte';
 
     /**
      * The console command description.
@@ -40,7 +40,5 @@ class CleanDatabase extends Command
     public function handle()
     {
         $this->info('cleaning database...');
-        Message::oneDayOld()->delete();
-        $this->info('database cleaned.');
     }
 }
