@@ -140,7 +140,10 @@
           <li><a href="{{ url('root_path') }}">Home</a></li>
           <li><a href="#"><img src="{{ $logged_logo }}"><span>Soccer</span></a></li>
         @else
-          <li><a href="{{ route('login_path') }}" class="glyphicon glyphicon-log-in"> Login</a></li>
+          <li><a href="{{ route('login_path') }}"><i class="glyphicon glyphicon-log-in"></i> Login</a></li>
+          @if (Route::has('register_path'))
+            <li><a href="{{ route('register_path') }}"><i class="glyphicon glyphicon-registration-mark"></i> Register</a></li>
+          @endif
         @endauth
       @endif
         </ul>
